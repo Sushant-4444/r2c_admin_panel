@@ -15,7 +15,7 @@ router.get('/', verifyAdmin, async (req, res) => {
     try {
         // Get the absolute path to the logs directory from environment variables
         // const logsDir = process.env.LOGS_DIRECTORY_PATH;
-        const logsDir = "/home/user/projects/Research-To-Commercialization-Backend/logs";
+        const logsDir = "/home/iiitd/Research-To-Commercialization-Backend/logs";
 
         // Check if the environment variable is set
         if (!logsDir) {
