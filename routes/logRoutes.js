@@ -1,7 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
-import verifyAdmin from '../middleware/verifyadmin';
+import verifyAdmin from '../middleware/verifyadmin.js';
 import 'dotenv/config'; // Loads .env file contents into process.env
 
 const router = express.Router();
