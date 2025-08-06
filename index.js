@@ -26,6 +26,7 @@ try {
 
 import userroutes from "./routes/userRoutes.js";
 import studyRoutes from "./routes/studyRoutes.js";
+import logRoutes from "./routes/logRoutes.js";
 
 const connectDB = async () => {
     try {
@@ -51,6 +52,8 @@ app.use(express.json());
 app.use("/auth", authroutes);
 app.use("/users", userroutes);
 app.use("/studies", studyRoutes);
+app.use("/logs", logRoutes);
+
 
 app.use((_req, res, _next) => {
   res.status(404).json({ message: "Sorry, can't find that route!" });
