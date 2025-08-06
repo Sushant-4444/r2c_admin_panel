@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post("/google-signin", async (req, res) => {
   const idToken = req.headers['id-token'];
-  console.log("Received ID token:", idToken);
+  // console.log("Received ID token:", idToken);
   if (!idToken) {
     return res.status(400).json({ message: "ID token is required." });
   }
@@ -21,7 +21,7 @@ router.post("/google-signin", async (req, res) => {
     const decodedToken = await auth.verifyIdToken(idToken);
     const { uid, email: rawEmail, name, picture } = decodedToken;
     const email = rawEmail ? rawEmail.toLowerCase() : null;
-    console.log("UUID:", uid);
+    // console.log("UUID:", uid);
 
     if (!email) {
       return res

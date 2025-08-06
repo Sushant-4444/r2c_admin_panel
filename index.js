@@ -18,7 +18,7 @@ try {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
-  console.log("Firebase Admin SDK initialized successfully.");
+  // console.log("Firebase Admin SDK initialized successfully.");
 } catch (error) {
   console.error("Failed to initialize Firebase Admin SDK:", error);
   process.exit(1);
@@ -34,7 +34,7 @@ const connectDB = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        console.log('MongoDB Connected Successfully.');
+        // console.log('MongoDB Connected Successfully.');
     } catch (error) {
         console.error('MongoDB Connection Failed:', error.message);
         process.exit(1);

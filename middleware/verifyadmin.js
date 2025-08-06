@@ -23,7 +23,7 @@ async function verifyAdmin(req, res, next) {
         }
 
         const userData = userDoc.data();
-        console.log("User Data:", userData);
+        // console.log("User Data:", userData);
 
         if (userData && userData.role === 'admin') {
             req.user = {

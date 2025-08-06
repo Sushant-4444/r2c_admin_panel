@@ -115,7 +115,7 @@ router.get("/:id",verifyAdmin, async (req, res) => {
 router.patch("/:id/approve", verifyAdmin, async (req, res) => {
     const { id: studyId } = req.params;
     const { approved } = req.body;
-    console.log(`Received request to update approval status for study: ${studyId} to ${typeof studyId} (${approved})`);
+    // console.log(`Received request to update approval status for study: ${studyId} to ${typeof studyId} (${approved})`);
 
     if (typeof approved !== 'boolean') {
         return res.status(400).json({ message: "The 'approved' field must be a boolean." });
@@ -128,7 +128,7 @@ router.patch("/:id/approve", verifyAdmin, async (req, res) => {
         // 2. Check if the incoming ID string could possibly be an ObjectId
         if (mongoose.Types.ObjectId.isValid(studyId)) {
             // If it could be, search for either the string OR the ObjectId
-            console.log(`Study ID ${studyId} is a valid ObjectId format.`);
+            // console.log(`Study ID ${studyId} is a valid ObjectId format.`);
             query = {
                 $or: [
                     { _id: studyId }, // Matches documents with a string ID
